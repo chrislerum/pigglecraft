@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+body {
+  /*background: url('puppy.jpg') no-repeat;*/
+}
+div.byline {
+  padding-left: 200px;
+  padding-top: 30px;
+}
+span.section-title {
+  font-size: 30px;
+}
+div.paragraph {
+  text-indent: 50px;
+}
+div.container {
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+div.leftalign {
+  text-align: left;
+}
