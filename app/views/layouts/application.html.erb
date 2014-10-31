@@ -3,8 +3,8 @@
   <head>
     <title>Pigglecraft</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -14,7 +14,18 @@
           <%= image_tag 'header.png' %>
         </div>
         <div class="pure-u-1-5 pink">
-          Sign In / Sign Up
+          <% if user_signed_in? %>
+            <%= link_to current_user.email, main_app.edit_user_registration_path %>
+            | <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %>
+          <% if current_user.forem_admin %>
+            | <%= link_to "Administrate", forem.admin_root_url %>
+        <% end %>
+      <% else %>
+        <%= link_to "Sign up", main_app.new_user_registration_path %>
+        | <%= link_to "Sign in", main_app.new_user_session_path %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
         </div>
         <div class="pure-u-1">
           <div class="header">
@@ -31,7 +42,9 @@
             </div>
           </div>
         </div>
-        <%= yield %>
+        <div class="pure-u-1">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </body>
