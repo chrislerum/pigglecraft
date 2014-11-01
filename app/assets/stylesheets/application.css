@@ -16,7 +16,7 @@
  */
 @font-face {
   font-family: "Chalkduster";
-  src: url(assets/Chalkduster.ttf) format("truetype");
+  src: url('Chalkduster.ttf') format("truetype");
 }
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
