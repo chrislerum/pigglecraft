@@ -15,12 +15,12 @@
  *= require_self
  */
 @font-face {
-  font-family: asset_path('Chalkduster.ttf');
+  font-family: "Chalkduster";
+  src: url(/assets/Chalkduster.ttf) format("truetype");
 }
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
   font-family:"Chalkduster", Times, "Times New Roman", serif;
-
 }
 body {
   background-color: #FDB5B5;
