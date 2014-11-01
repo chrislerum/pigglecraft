@@ -29,6 +29,16 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
   config.action_mailer.default_url_options = { host: 'pigglecraft.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'pigglecraft.com',
+    user_name:            'chris.lerum@gmail.com',
+    password:             'buckledown99',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
   # Generate digests for assets URLs.
   config.assets.digest = true
 
