@@ -31,13 +31,13 @@
           <div class="header">
             <div class="pure-menu pure-menu-open pure-menu-horizontal">
               <ul>
-                <li class="pure-menu-selected"><a href="/">Home</a></li>
-                <li><a href="/forums">Forum</a></li>
-                <li><a href="#">Report Abuse</a></li>
-                <li><a href="#">Donate</a></li>
-                <li><a href="#">Apply for Stuff</a></li>
-                <li><a href="#">About Pigglecraft</a></li>
-                <li><a href="#">Suggestions?</a></li>
+                <li class="pure-menu-selected"><%= link_to 'Home', main_app.root_path %></li>
+                <li><%= link_to 'Forums', forem.forums_path %></li>
+                <li><%= link_to 'Report Abuse', main_app.report_abuse_path %></li>
+                <li> <%= link_to 'Donate', main_app.donate_path %></li>
+                <li><%= link_to 'Apply for Stuff', main_app.apply_for_stuff_path %></li>
+                <li><%= link_to 'About Pigglecraft', main_app.about_pigglecraft_path %></li>
+                <li><%= link_to 'Suggestions?', main_app.suggestions_path %></li>
               </ul>
             </div>
           </div>
