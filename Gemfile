@@ -16,9 +16,12 @@ gem 'quiet_assets'
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rbenv'#, github: "capistrano/rbenv"
-gem 'therubyracer', group: :production
+gem 'capistrano-rbenv'
+gem 'therubyrhino', group: :production
 gem 'mysql2', group: :production
 gem 'compass'
 gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
+gem 'rspec-rails'
+gem 'guard-rspec'
+gem 'capybara'
