@@ -20,3 +20,5 @@ gem 'capistrano-rbenv'#, github: "capistrano/rbenv"
 gem 'therubyracer', group: :production
 gem 'mysql2', group: :production
 gem 'compass'
+gem 'carrierwave'
+gem 'activeadmin', github: 'activeadmin'

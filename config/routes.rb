@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :reports
+
   get 'donate' => 'static#donate'
   get 'report_abuse' => 'static#report_abuse'
   get 'apply_for_stuff' => 'static#apply_for_stuff'
