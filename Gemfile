@@ -25,3 +25,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'slim-rails'
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+end

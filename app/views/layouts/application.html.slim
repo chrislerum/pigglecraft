@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Pigglecraft
+    = stylesheet_link_tag    'purecss', media: 'all'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    .container
+      .pure-g.leftalign
+        .pure-u-3-5.pink
+          = image_tag 'header.png'
+        .pure-u-2-5.pink
+          - if user_signed_in?
+            = link_to current_user.email, main_app.edit_user_registration_path
+            '  |
+            = link_to "Sign out", main_app.destroy_user_session_path, :method => :delete
+            - if current_user.forem_admin
+              '  |
+              = link_to "Administrate", forem.admin_root_url
+          - else
+            = link_to "Sign up", main_app.new_user_registration_path
+            '  |
+            = link_to "Sign in", main_app.new_user_session_path
+          p.notice= notice
+          p.alert= alert
+        .pure-u-1
+          .header
+            .pure-menu.pure-menu-open.pure-menu-horizontal
+              ul
+                li.pure-menu-selected= link_to 'Home', main_app.root_path
+                li= link_to 'Forums', forem.forums_path
+                li= link_to 'Report Abuse', main_app.report_abuse_path
+                li= link_to 'Perk Shop', main_app.perk_shop_path
+                li= link_to 'Apply for Stuff', main_app.apply_for_stuff_path
+                li= link_to 'About Pigglecraft', main_app.about_pigglecraft_path
+                li= link_to 'Suggestions?', main_app.suggestions_path
+        .pure-u-1
+          = yield

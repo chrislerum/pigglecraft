@@ -1,6 +1,13 @@
 require 'rails_helper'
 
-feature "Reports", :type => :feature do
-  visit root_path
-  #expect(page).to have_content 'hello'
+describe "Reports", :type => :feature do
+  it 'lets you report bad behavior' do
+    visit report_abuse_path
+    click_link 'Report Abuse'
+    fill_in 'Player', with: 'Frank'
+    fill_in 'Description', with: 'He was calling me mean names.'
+    attach_file 'report_screenshot', 'spec/features/selena.jpg'
+    click_button 'Create Report'
+    expect(page).to have_content 'Report was successfully created'
+  end
 end
