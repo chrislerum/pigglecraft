@@ -1,8 +1,5 @@
 require 'devise'
-include Warden::Test::Helpers
 RSpec.configure do |config|
-  Warden.test_mode!
-  config.include Devise::TestHelpers, :type => :controller
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
