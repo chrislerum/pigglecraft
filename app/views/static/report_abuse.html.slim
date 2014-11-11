@@ -1,24 +1,30 @@
-= form_for @report, :html => {:multipart => true}, :url => {controller: 'static', action: 'create_abuse_report'} do |f|
-  - if @report.errors.any?
-    #error_explanation
-      h2
-        = pluralize(@report.errors.count, "error")
-        | prohibited this report from being saved:
-      ul
-        - @report.errors.full_messages.each do |message|
-          li= message
-  .field
-    = f.label :player
-    br/
-    = f.text_field :player
-  .field
-    = f.label :description
-    br/
-    = f.text_area :description
-  div
-    label Upload Screenshot
-    = f.file_field :screenshot
-    = f.hidden_field :screenshot_cache
-  .actions
-    = f.submit
-= link_to 'Back', reports_path
+.pure-g
+  .pure-u-1
+    = form_for @report, :html => {:multipart => true}, :url => {controller: 'static', action: 'create_abuse_report'} do |f|
+      - if @report.errors.any?
+        #error_explanation
+          h2
+            = pluralize(@report.errors.count, "error")
+            | prohibited this report from being saved:
+          ul
+            - @report.errors.full_messages.each do |message|
+              li= message
+      .field
+        = f.label :offending_player
+        br/
+        = f.text_field :player
+        br/
+        br/
+      .field
+        = f.label :description_of_problem
+        br/
+        = f.text_area :description
+        br/
+        br/
+      div
+        label style = 'padding-right: 50px;' Upload Screenshot (optional)
+        = f.file_field :screenshot
+        = f.hidden_field :screenshot_cache
+      br/
+      .actions
+        = f.submit

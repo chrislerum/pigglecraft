@@ -21,18 +21,17 @@ html
             '  |
             = link_to "Sign in", main_app.new_user_session_path
         .pure-u-1
-          .header
-            .pure-menu.pure-menu-open.pure-menu-horizontal
-              ul
-                li.pure-menu-selected= link_to 'Home', main_app.root_path
-                li= link_to 'Forums', forem.forums_path
-                li= link_to 'Report Abuse', main_app.report_abuse_path
-                li= link_to 'Perk Shop', main_app.perk_shop_path
-                li= link_to 'Apply for Stuff', main_app.apply_for_stuff_path
-                li= link_to 'About Pigglecraft', main_app.about_pigglecraft_path
-                li= link_to 'Suggestions?', main_app.suggestions_path
-                - if user_signed_in? && current_user.forem_admin
-                  li= link_to "Manage Forums", forem.admin_root_url
+          .pure-menu.pure-menu-open.pure-menu-horizontal
+            ul
+              li.pure-menu-selected= link_to 'Home', main_app.root_path
+              li= link_to 'Forums', forem.forums_path
+              li= link_to 'Report Abuse', main_app.report_abuse_path
+              li= link_to 'Perk Shop', main_app.perk_shop_path
+              li= link_to 'Apply for Stuff', main_app.apply_for_stuff_path
+              li= link_to 'About Pigglecraft', main_app.about_pigglecraft_path
+              li= link_to 'Suggestions?', main_app.suggestions_path
+              - if user_signed_in? && current_user.forem_admin
+                li= link_to "Manage Forums", forem.admin_root_url
         .pure-u-1.under-header
           - if notice || alert then
             .the-flashes
@@ -41,4 +40,6 @@ html
           - else
             .the-flashes-hidden
           span.page-title= @page_title.nil? ? controller.controller_name.capitalize : @page_title unless controller.controller_name == 'base'
+          br
+          br
           = yield
