@@ -8,6 +8,6 @@ describe "Reports", :type => :feature do
     fill_in 'Description', with: 'He was calling me mean names.'
     attach_file 'report_screenshot', 'spec/features/selena.jpg'
     click_button 'Create Report'
-    expect(page).to have_content 'Report was successfully created'
+    expect(page).to have_content 'Thank you'
   end
 end

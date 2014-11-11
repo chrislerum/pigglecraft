@@ -10,10 +10,10 @@ describe 'Forems' do
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: password
     click_button 'Sign in'
-    expect(page).to have_no_content 'Administrate'
+    expect(page).to have_no_content 'Manage Forums'
   end
 
-  it "does allow forem-admins to administrate" do
+  it "allows forem-admins to administrate" do
     password = 'urururyt'
     @user = create :forem_admin, password: password
     @user.confirm!
@@ -22,6 +22,6 @@ describe 'Forems' do
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: password
     click_button 'Sign in'
-    expect(page).to have_content 'Administrate'
+    expect(page).to have_content 'Manage Forums'
   end
 end

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'apply_for_stuff' => 'static#apply_for_stuff'
   get 'about_pigglecraft' => 'static#about_pigglecraft'
   get 'suggestions' => 'static#suggestions'
+  post 'static/create_abuse_report'
+
 
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.

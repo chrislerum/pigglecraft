@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    #@report = Report.new
   end
 
   # POST /reports

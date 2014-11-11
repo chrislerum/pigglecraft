@@ -1,6 +1,4 @@
-span.page-title Report Abuse
-h1 New report
-= form_for @report, :html => {:multipart => true} do |f|
+= form_for @report, :html => {:multipart => true}, :url => {controller: 'static', action: 'create_abuse_report'} do |f|
   - if @report.errors.any?
     #error_explanation
       h2

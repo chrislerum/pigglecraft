@@ -9,22 +9,17 @@ html
   body
     .container
       .pure-g.leftalign
-        .pure-u-3-5.pink
+        .pure-u-3-5.header-background-left
           = image_tag 'header.png'
-        .pure-u-2-5.pink
+        .pure-u-2-5.header-background-right
           - if user_signed_in?
             = link_to current_user.email, main_app.edit_user_registration_path
             '  |
-            = link_to "Sign out", main_app.destroy_user_session_path, :method => :delete
-            - if current_user.forem_admin
-              '  |
-              = link_to "Administrate", forem.admin_root_url
+            = link_to "Sign out", main_app.destroy_user_session_path, method: :delete
           - else
             = link_to "Sign up", main_app.new_user_registration_path
             '  |
             = link_to "Sign in", main_app.new_user_session_path
-          p.notice= notice
-          p.alert= alert
         .pure-u-1
           .header
             .pure-menu.pure-menu-open.pure-menu-horizontal
@@ -36,5 +31,14 @@ html
                 li= link_to 'Apply for Stuff', main_app.apply_for_stuff_path
                 li= link_to 'About Pigglecraft', main_app.about_pigglecraft_path
                 li= link_to 'Suggestions?', main_app.suggestions_path
-        .pure-u-1
+                - if user_signed_in? && current_user.forem_admin
+                  li= link_to "Manage Forums", forem.admin_root_url
+        .pure-u-1.under-header
+          - if notice || alert then
+            .the-flashes
+              p.notice= notice
+              p.alert= alert
+          - else
+            .the-flashes-hidden
+          span.page-title= @page_title.nil? ? controller.controller_name.capitalize : @page_title unless controller.controller_name == 'base'
           = yield
