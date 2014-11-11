@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :reports
 
-  get 'donate' => 'static#donate'
+  get 'perk_shop' => 'static#perk_shop'
   get 'report_abuse' => 'static#report_abuse'
   get 'apply_for_stuff' => 'static#apply_for_stuff'
   get 'about_pigglecraft' => 'static#about_pigglecraft'

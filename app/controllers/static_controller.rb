@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-  def donate
+  def perk_ship
   end
   def report_abuse
     @report = Report.new
