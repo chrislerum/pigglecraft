@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :custom_texts
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :reports

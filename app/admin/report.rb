@@ -1,8 +1,8 @@
 ActiveAdmin.register Report do
 
-   permit_params do
-     permitted = [:permitted, :attributes]
-   end
+  permit_params do
+    permitted = [:permitted, :attributes]
+  end
 
   show do
     attributes_table do
