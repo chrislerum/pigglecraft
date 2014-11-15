@@ -2,7 +2,7 @@
   .pure-u-1
     .section-title News
     .paragraph= CustomText.find_by_name(:front_page_news).the_text
-    .byline -The Owners of PiggleCraft, November 11th, 2014
+    .byline -The Owners of PiggleCraft, #{CustomText.find_by_name(:front_page_news).updated_at.strftime("%m/%d/%Y")}
     hr
     br
   .pure-u-1-2
