@@ -32,7 +32,7 @@ html
               =current_list_item 'About Pigglecraft', main_app.about_pigglecraft_path
               =current_list_item 'Suggestions?', main_app.suggestions_path
               - if user_signed_in? && current_user.admin
-                =current_list_item 'Admin', main_app.rails_admin_path
+                =current_list_item 'Admin', main_app.rails_admin_path, true
         .pure-u-1.under-header
           - if notice || alert then
             .the-flashes
