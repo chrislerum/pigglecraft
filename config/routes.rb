@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get 'report_abuse' => 'static#report_abuse'
   get 'apply_for_stuff' => 'static#apply_for_stuff'
   get 'about_pigglecraft' => 'static#about_pigglecraft'
-  get 'suggestions' => 'static#suggestions'
   post 'static/create_abuse_report'
 
 

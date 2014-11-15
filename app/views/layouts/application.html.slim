@@ -14,7 +14,7 @@ html
           = link_to image_tag('header.png'), main_app.root_path, title: 'Home'
         .pure-u-2-5.header-background-right
           - if user_signed_in?
-            = link_to current_user.email, main_app.edit_user_registration_path
+            = link_to current_user.username, main_app.edit_user_registration_path
             '  |
             = link_to "Sign out", main_app.destroy_user_session_path, method: :delete
           - else
@@ -30,7 +30,6 @@ html
               =current_list_item 'Perk Shop', main_app.perk_shop_path
               =current_list_item 'Apply for Stuff', main_app.apply_for_stuff_path
               =current_list_item 'About Pigglecraft', main_app.about_pigglecraft_path
-              =current_list_item 'Suggestions?', main_app.suggestions_path
               - if user_signed_in? && current_user.admin
                 =current_list_item 'Admin', main_app.rails_admin_path, true
         .pure-u-1.under-header
