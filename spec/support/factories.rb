@@ -6,4 +6,9 @@ FactoryGirl.define do
       forem_admin true
     end
   end
+
+  factory :admin_user do
+    email 'user@gmail.com'
+    password 'urururyt'
+  end
 end

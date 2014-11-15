@@ -20,8 +20,8 @@ gem 'capybara'
 gem 'spring'
 gem 'mysql2'
 gem 'forem', :github => "radar/forem", :branch => "rails4"
-gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'rails_admin'
 gem 'carrierwave'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'slim-rails'

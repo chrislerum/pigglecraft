@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :custom_texts
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  #devise_for :admin_users, ActiveAdmin::Devise.config
   resources :reports
 
   get 'perk_shop' => 'static#perk_shop'

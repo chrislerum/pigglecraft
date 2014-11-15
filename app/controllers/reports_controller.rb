@@ -21,9 +21,8 @@ class ReportsController < ApplicationController
     #end
   #end
 
-  #private
-  ## Never trust parameters from the scary internet, only allow the white list through.
-  #def report_params
-    #params.require(:report).permit(:player, :description, :screenshot, :screenshot_cache)
-  #end
+  private
+  def report_params
+    params.require(:report).permit(:player, :description, :screenshot, :screenshot_cache)
+  end
 end
