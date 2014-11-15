@@ -12,6 +12,10 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+  #config.model 'User' do
+
+  #end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
