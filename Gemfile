@@ -22,6 +22,7 @@ gem 'mysql2'
 gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'devise'
 gem 'rails_admin'
+gem 'cancan'
 gem 'carrierwave'
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'slim-rails'
